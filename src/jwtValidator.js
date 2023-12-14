@@ -51,11 +51,6 @@ export function validateHmacAlgorithmHeader(token) {
     return false
   }
 
-  if (decodedHeader.typ !== 'JWT') {
-    console.log(`Unsupported Typ: ${decodedHeader.typ}`)
-    return false
-  }
-
   if (!SUPPORTED_ALGORITHM.includes(decodedHeader.alg)) {
     console.log(
       `Unsupported algorithm: ${
